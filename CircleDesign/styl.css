@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fdfcfc;
+    min-height: 100vh;
+}
+
+.man {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 180px;
+    width: 100px;
+    background-color: black;
+    /* border: 3px solid white; */
+    border-radius: 20%;
+}
+
+.face {
+    position: relative;
+    /* border: 3px solid white; */
+    background-color: black;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    bottom: 90px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    top: 30%;
+}
+
+.face .top .eye {
+    position: relative;
+    background-color: white;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.face .smile {
+    border: 2px solid white;
+    display: inline-block;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    min-height: 15px;
+    min-width: 30px;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.man:hover .top .eye {
+    height: 18px;
+}
+
+.man:hover .face .smile {
+    min-height: 15px;
+    min-width: 30px;
+    border-radius: 0 0 150px 150px;
+    background-color: white;
+}
+
+.hand-l,
+.hand-r {
+    position: relative;
+    width: 40px;
+    height: 150px;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.hand-l {
+    transform: rotate(-70deg);
+    bottom: 180px;
+    right: 10px;
+    transform-origin: bottom;
+}
+
+@keyframes wave {
+    50% {
+        transform: rotate(-9deg);
+    }
+}
+
+.man:hover .hand-l {
+    animation: wave 3s infinite;
+}
+
+.hand-r {
+    transform: rotate(-20deg);
+    bottom: 210px;
+    left: 90px;
+}
+
+.bottom {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    top: 80%
+}
+
+.leg {
+    position: relative;
+    width: 40px;
+    height: 160px;
+    background-color: black;
+    border-radius: 40px;
+}
+
+.shadow {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 30px;
+    width: 100px;
+    border-radius: 50%;
+    bottom: 80px;
+}
